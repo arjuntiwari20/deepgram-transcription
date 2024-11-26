@@ -1,70 +1,115 @@
-# Getting Started with Create React App
+# **Deepgram Transcription App**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a React-based web application that allows users to record audio, transcribe it using the Deepgram API, and view past transcriptions. The app is responsive and styled using Tailwind CSs
 
-## Available Scripts
+## **Features**
 
-In the project directory, you can run:
+- 🎙️ **Audio Recording:** Start and stop audio recording using the microphone.  
+- 📝 **Audio Transcription:** Transcribe recorded audio in real-time using the Deepgram API.  
+- 💾 **Save Transcriptions:** Save and display past transcriptions for reference.  
+- 📱 **Responsive Design:** Works seamlessly on mobile, tablet, and desktop.  
+- 🎨 **Styling:** Clean and modern design implemented with Tailwind CSS.  
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## **Technologies Used**
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Frontend Framework:** React.js  
+- **Styling:** Tailwind CSS  
+- **Audio Recording:** MediaRecorder API  
+- **Transcription Service:** Deepgram API  
+- **State Management:** React Hooks  
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## **Setup Instructions**
 
-### `npm run build`
+Follow the steps below to run the application locally:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### **1. Clone the Repository**
+```bash
+git clone https://github.com/your-username/deepgram-transcription-app.git
+cd deepgram-transcription-app
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### **2. Install Dependencies**
+```bash
+npm install
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### **3. Set Up Tailwind CSS**
+Tailwind CSS is already configured. You can find the configuration file in `tailwind.config.js`. Ensure the directives in `src/index.css` are:
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
 
-### `npm run eject`
+### **4. Add Deepgram API Key**
+- Sign up for a free account on [Deepgram](https://www.deepgram.com).
+- Get your API key.
+- Replace `YOUR_DEEPGRAM_API_KEY` in the file `src/components/Transcription.js` with your API key.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```javascript
+Authorization: `Token YOUR_DEEPGRAM_API_KEY`,
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### **5. Start the Development Server**
+Run the following command to start the app:
+```bash
+npm start
+```
+The app will be available at `http://localhost:3000`.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## **Usage**
 
-## Learn More
+1. Click **"Start Recording"** to record audio.  
+2. Click **"Stop Recording"** when done.  
+3. Click **"Transcribe Audio"** to transcribe the audio.  
+4. View the transcription in the **"Transcribed Text"** section.  
+5. All transcriptions are saved under **"Past Transcriptions"**.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## **File Structure**
 
-### Code Splitting
+```
+deepgram-transcription-app/
+├── src/
+│   ├── components/
+│   │   ├── Microphone.js   # Handles audio recording
+│   │   ├── Transcription.js # Handles transcription and past transcription display
+│   ├── index.css          # Tailwind CSS styles
+│   ├── App.js             # Main application logic
+│   ├── index.js           # React entry point
+├── tailwind.config.js      # Tailwind configuration
+├── package.json            # Project dependencies and scripts
+└── README.md               # Project documentation
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
+## **Screenshots**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### **1. Audio Recording**
+| ![Recording Screenshot](https://via.placeholder.com/400x200) |
+|:----------------------------------------------------------:|
+| Recording in progress |
 
-### Making a Progressive Web App
+### **2. Transcription**
+| ![Transcription Screenshot](https://via.placeholder.com/400x200) |
+|:----------------------------------------------------------------:|
+| Transcribed text displayed |
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
+## **Future Improvements**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- 🌟 Real-time transcription display during recording.  
+- 🌟 Support for multiple languages.  
+- 🌟 Export transcriptions as text files or PDFs.  
 
-### Deployment
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
